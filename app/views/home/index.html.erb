@@ -3,7 +3,18 @@
     <h3 class="panel-title"><%= link_to 'Click Hero To Generate A Superhero', root_path %></h3>
   </div>
   <div class="panel-body">
-    <%= @hero_name %>
+    Your Superhero Name:<br/>
+    <%= @hero_name %><br/>
+    
+    Your Superhero Power: <br/>
+    <%= @hero_power %><br/><br/>
+    
+    Your Undrcover Day Job is: <br/>
+    <%= @corp_title %>
+    
+    <br/>
+    Your Corporate Superpower is: <br/>
+    <%= @corp_power %>
   </div>
   <div class="panel-footer"><%= link_to 'Create A Whole Superhero Team', home_team_path %></div>
 </div>
