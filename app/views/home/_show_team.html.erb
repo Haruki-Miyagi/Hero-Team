@@ -3,26 +3,54 @@
 
     <div class="row">
       <div class="col-md-4"><br/>
-        <img src ="<%= @avatar %>"><br/><br/>
+
+
+    <% rand_num = rand(1..1000) %>
+   <% set_num = rand(1..4) %>
+    <% bg = rand(1..2) %>
+    
+    <% if set_num == 1 %>
+      <% set = "set1" %>
+    <% elsif set_num == 2 %>
+      <% set = "set2" %>
+    <% elsif set_num == 3 %>
+     <% set = "set3" %>
+    <% else %>
+      <% set = "set4" %>
+    <% end %>
+    
+    <% if bg == 1 %>
+      <% background = "bg1" %>
+    <% else %>
+      <% background = "bg2" %>
+    <% end %>
+    
+    
+    <% avatar = Faker::Avatar.image(rand_num, "300x300", "png", set, background) %>
+
+
+
+
+        <img src ="<%= avatar %>"><br/><br/>
       </div>
       
       <div class="col-md-4"><br/>
       <h3>
         Your Superhero Name:<br/>
-        <span class="red"><%= @hero_name %></span>
+        <span class="red"><%= Faker::Superhero.name %></span>
       </h3>
       <h3>
         Your Superhero Power: <br/>
-        <span class="red"><%= @hero_power %></span>
+        <span class="red"><%= Faker::Superhero.power %></span>
       </h3>
       <br/><br/>
       <h4>
         Your Undrcover Day Job is: <br/>
-        <span class="corp_red"><%= @corp_title %></span>
+        <span class="corp_red"><%= Faker::Name.title %></span>
        </h4>
        <h4>
         Your Corporate Superpower is: <br/>
-        <span class = "corp_red"><%= @corp_power %></span>
+        <span class = "corp_red"><%= Faker::Company.bs %></span>
        </h4>
       </div>
       
