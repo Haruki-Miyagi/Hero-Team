@@ -3,6 +3,11 @@
     <h3 class="panel-title"><%= link_to 'Click Hero To Generate A Superhero', root_path %></h3>
   </div>
   <div class="panel-body">
+    
+    <img src ="<%= @avatar %>"><br/>
+
+    
+    
     Your Superhero Name:<br/>
     <%= @hero_name %><br/>
     
@@ -14,7 +19,9 @@
     
     <br/>
     Your Corporate Superpower is: <br/>
-    <%= @corp_power %>
+    <%= @corp_power %><br/>
+    
+
   </div>
   <div class="panel-footer"><%= link_to 'Create A Whole Superhero Team', home_team_path %></div>
 </div>
