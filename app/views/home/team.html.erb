@@ -13,7 +13,7 @@
     
     
     <% if @team_number > 0 %>
-      You picked <%= @team_number %> team meners ...
+      <%= render 'home/show_team' %>
     <% else %>
       <%= render 'home/create_team' %>
     <% end %>
