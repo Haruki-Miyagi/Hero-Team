@@ -17,7 +17,12 @@
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to 'Home Page', root_path %></li>
         <li><%= link_to 'Create A team', home_team_path %></li>
-      </ul>
+        
+        <li><%= link_to 'アカウント作成', new_user_registration_path %></li>
+        <li><%= link_to 'ログイン', new_user_session_path %></li>
+        <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
+        <li><%= link_to 'User Edit', edit_user_registration_path %></li>
+        
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
