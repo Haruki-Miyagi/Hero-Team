@@ -13,6 +13,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 gem 'faker', '~> 1.8', '>= 1.8.4'
 gem 'devise', '~> 4.3'
+gem 'toastr-rails'
+
+
 
 
 group :development, :test do
