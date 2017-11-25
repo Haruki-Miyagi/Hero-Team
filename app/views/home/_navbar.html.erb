@@ -8,7 +8,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <%= link_to 'SUPERHERO HOME', home_top_path, class: "navbar-brand" %>
+      <%= link_to 'SUPERHERO HOME', root_path, class: "navbar-brand" %>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -17,14 +17,20 @@
       <ul class="nav navbar-nav navbar-right">
         
         <% if user_signed_in? %>
-        <li><%= link_to 'SUPERHERO NAME GENERATOR', root_path %></li>
-        <li><%= link_to 'Create A team', home_team_path %></li>
-        <li><%= link_to 'サインアウト', destroy_user_session_path, method: :delete %></li>
-        <li><%= link_to 'ユーザー編集', edit_user_registration_path %></li>
-        
+          <li><%= link_to 'SUPERHERO NAME GENERATOR', home_index_path %></li>
+            <li><%= link_to 'Create A team', home_team_path %></li>
+            
+            <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= current_user.email %><span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><%= link_to 'ユーザー編集', edit_user_registration_path %></li>
+              <li><%= link_to 'サインアウト', destroy_user_session_path, method: :delete %></li>
+            </ul>
+          </li>
         <% else %>
-        <li><%= link_to 'アカウント作成', new_user_registration_path %></li>
-        <li><%= link_to 'ログイン', new_user_session_path %></li>
+          
+          <li><%= link_to 'アカウント作成', new_user_registration_path %></li>
+          <li><%= link_to 'ログイン', new_user_session_path %></li>
         <% end %>
 
     </div><!-- /.navbar-collapse -->
