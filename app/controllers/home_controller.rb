@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
   before_action :common, :only => [:index, :team]
-  
-  
+  before_action :authenticate_user!, only: [:index, :team]
+
   def top
   end
   
